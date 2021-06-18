@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 600px;
+            height: 250px;
+            border: 2px solid #000088;
+        }
+        span{
+            display: inline-block;
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        .name{
+            background-color: red;
+        }
+    </style>
+<!--    <script>-->
+<!--        window.onload = function () {-->
+<!--            let a = document.querySelectorAll(".name");-->
+<!--            console.log(a);-->
+<!--            for (let i = 0; i < a.length; i++) {-->
+<!--                a[i].innerHTML = '已预订';-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+</head>
+<body>
+    <h1>预定座位</h1>
+    <div>
+        {foreach $seat as $k => $v}
+        {if $v.sale == 1 }
+        <span class="name">
+            已预订
+
+        </span>
+        {else}
+        <span>{$k+1}</span>
+        {/if}
+        {/foreach}
+    </div>
+
+    <form action="/seat/choose" method="post">
+        <input type="text" name="seat_num">
+        <input type="submit">
+    </form>
+    <a href="/center/center">个人中心</a>
+    <a href="/out/out">退出登录</a>
+    <a href="/seat/my">我的预定</a>
+</body>
+</html>

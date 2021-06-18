@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影评分</title>
+</head>
+<body>
+    <h1>电影评分</h1>
+
+    <form action="/movie/movieScore" method="post">
+        <table border="1">
+            {foreach $movie as $k => $v }
+            <tr>
+                <td>{$v.movie_name}【{$avg[$k]['avg(movie_score)']}】</td>
+                <td><input name="num[{$v.movie_id}]" type="number"></td>
+            </tr>
+            {/foreach}
+            <tr>
+                <td></td>
+                <td><input type="submit" value="提交评分"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

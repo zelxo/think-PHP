@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>我的预定</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>座位号</th>
+            <th>预定时间</th>
+        </tr>
+    </thead>
+    <tbody>
+    {foreach $seat as $k => $v}
+        <tr>
+            <td>{$v.seat_num}</td>
+            <td>{$v.time}</td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<a href="/out/out">退出登录</a>
+<a href="/center/center">个人中心</a>
+</body>
+</html>

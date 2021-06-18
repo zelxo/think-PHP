@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>个人中心</h1>
+    用户名 {$name}<br>
+    用户名 {$email}<br>
+    用户名 {$mobile}<br>
+    用户名 {$Ege}<br>
+    用户名 {$address}<br>
+
+    <br><br><br>
+
+
+    <ul>
+        {foreach $history as $k => $v}
+        <li>{$v.uid}  /  {$v.loginTime}  /  {$v.loginIP}  /  {$v.ua}</li>
+        {/foreach}
+    </ul>
+
+    <a href="/out/out">退出登录</a>
+    <a href="/movie/movie">电影评分</a>
+    <a href="/prize/prize">抽奖活动</a>
+    <a href="/seat/reservation">预定座位</a>
+</body>
+</html>

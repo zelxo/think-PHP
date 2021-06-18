@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>修改数据</h1>
+    <form action="/books/books/{$ID}" method="post">
+        <input type="text" name="book_name" value="{$name}"><br>
+        <input type="text" name="book_price" value="{$price}"><br>
+        <input type="text" name="book_num" value="{$num}"><br>
+        <input type="text" name="is_sale" value="{$is}"><br>
+        <input type="submit" value="修改">
+    </form>
+</body>
+</html>

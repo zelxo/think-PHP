@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>图书列表</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>图书ID</th>
+                <th>名称</th>
+                <th>价格</th>
+                <th>数量</th>
+                <th>是否上架</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach $sql as $k => $v}
+            <tr>
+                <td>{$v.book_id}</td>
+                <td>{$v.book_name}</td>
+                <td>{$v.book_price}</td>
+                <td>{$v.book_num}</td>
+                <td>
+                    {if $v.is_sale == "1" }
+                    是
+                    {else}
+                    否
+                    {/if}
+                </td>
+                <td>
+                    <a href='/bookDel/bookDel/{$v.book_id}'>删除</a>
+                    <a href='/bookUpdate/bookUpdate/{$v.book_id}'>修改</a>
+                </td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+</body>
+</html>
